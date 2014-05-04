@@ -1,0 +1,25 @@
+{
+  "name": "JavaCoffee",
+  "version": "0.0.0",
+  "description": "Coffeescript-like syntax for writing Java code ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grant/JavaCoffee"
+  },
+  "keywords": [
+    "coffeescript",
+    "java",
+    "simple",
+    "clean"
+  ],
+  "author": "Grant Timmerman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grant/JavaCoffee/issues"
+  },
+  "homepage": "https://github.com/grant/JavaCoffee"
+}
