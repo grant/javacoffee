@@ -1,0 +1,7 @@
+/**
+ * HelloWorld.java
+ */
+
+class HelloWorld
+  main String[] args
+    println "Hello World!"

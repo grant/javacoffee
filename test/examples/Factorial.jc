@@ -1,0 +1,11 @@
+class Factorial
+  main String[] args
+    NUM_FACTS = 100
+    for i = 0..NUM_FACTS
+      println "@i ! is @factorial(i)"
+  
+  &factorial int n
+    result = 1
+    for i = 2...n
+      result *= i
+    return result
