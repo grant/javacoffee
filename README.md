@@ -3,6 +3,12 @@ javacoffee
 
 Coffeescript-like syntax for writing Java code.
 
+```bash
+npm install javacoffee -g
+```
+
+**Please don't install yet. This is still in development!!!**
+
 ## Examples
 
 ### Fibonacci
