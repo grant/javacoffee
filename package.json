@@ -1,6 +1,6 @@
 {
   "name": "JavaCoffee",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Coffeescript-like syntax for writing Java code ",
   "main": "./lib/javacoffee",
   "scripts": {
