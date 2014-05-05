@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha"
   },
+  "main": "./lib/javacoffee",
   "repository": {
     "type": "git",
     "url": "https://github.com/grant/JavaCoffee"
@@ -16,10 +17,16 @@
     "simple",
     "clean"
   ],
+  "bin": {
+    "javacoffee": "./bin/javacoffee"
+  },
   "author": "Grant Timmerman",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/grant/JavaCoffee/issues"
   },
-  "homepage": "https://github.com/grant/JavaCoffee"
+  "homepage": "https://github.com/grant/JavaCoffee",
+  "engines": {
+    "node": "*"
+  }
 }

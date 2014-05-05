@@ -42,7 +42,7 @@ class Fibonacci {
 ```jc
 class Point
   +double x, y
-  +origin = Point 0 0
+  +&origin = Point 0 0
   Point @x @y
   +clear @x = @y = 0
   +distance(Point that):double
