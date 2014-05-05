@@ -1,0 +1,1 @@
+Feel free to raise issues and add features with a PR request. Please follow the coffeescript [styleguide](https://github.com/polarmobile/coffeescript-style-guide).

@@ -83,4 +83,19 @@ class Point {
 
 `javacoffee file.jc` -> `file.class`
 
+## How to develop
+
+Install and keep `gulp` running
+
+```bash
+npm install
+gulp
+```
+
+Test with the following:
+
+```bash
+node ./bin/javacoffee myFile.jc
+```
+
 Filetype: _.jc_
