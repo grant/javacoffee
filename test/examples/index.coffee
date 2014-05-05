@@ -3,11 +3,11 @@ async = require 'async'
 
 examples = [
   'HelloWorld'
-  'EnhancedFor'
-  'Factorial'
-  'LiteralJava'
-  'Methods'
-  'RectanglePointer'
+  # 'EnhancedFor'
+  # 'Factorial'
+  # 'LiteralJava'
+  # 'Methods'
+  # 'RectanglePointer'
 ]
 
 describe 'examples', ->
@@ -31,7 +31,7 @@ describe 'examples', ->
             it exampleName, ->
               expected = expectedJavaContent.split('\n')
               actual = actualJavaContent.split('\n')
-              expected.should.eql(actual)
+              actual.should.equal(expected)
     else
       # Something went wrong with the files
       console.error "There's something wrong with the file paths"
