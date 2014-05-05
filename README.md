@@ -20,7 +20,7 @@ class Fibonacci
     lo = hi = 1
     println lo
     while hi < 50
-      print hi
+      println hi
       hi = lo + hi
       lo = hi - lo
 ```
@@ -35,7 +35,7 @@ class Fibonacci {
     int hi = 1;
     System.out.println(lo);
     while (hi < 50) {
-      System.out.print(hi);
+      System.out.println(hi);
       hi = lo + hi;
       lo = hi - lo;
     }
@@ -57,23 +57,23 @@ class Point
     Math.sqrt xDiff^2 + yDiff^2
 ```
 
-converts to 
+converts to
 
 ```java
 class Point {
-  public double x, y; 
-  public static Point origin = new Point(0,0); 
+  public double x, y;
+  public static Point origin = new Point(0,0);
   Point(double x_value, double y_value) {
-    x = x_value; 
-    y = y_value; 
+    x = x_value;
+    y = y_value;
   }
   public void clear() {
-    this.x = 0; 
-    this.y = 0; 
+    this.x = 0;
+    this.y = 0;
   }
   public double distance(Point that) {
-    double xDiff = x - that.x; 
-    double yDiff = y - that.y; 
+    double xDiff = x - that.x;
+    double yDiff = y - that.y;
     return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
   }
 }
