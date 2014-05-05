@@ -1,0 +1,28 @@
+Rect = Rectangle
+class RectanglePointer
+  main String[] args
+    go
+
+  &go
+    r1 = Rect 0 0 5 5
+    println "In method go. r1 @r1\n"
+    // could have been 
+    //System.out.prinltn("r1" + r1.toString());
+    r1.setSize 10 15
+    println "In method go. r1 @r1\n"
+    alterPointee r1
+    println "In method go. r1 @r1\n"
+
+    alterPointer r1
+    println "In method go. r1 @r1\n"
+  }
+
+  &alterPointee Rect r
+    println "In method alterPointee. r @r\n"
+    r.setSize 20 30
+    println "In method alterPointee. r @r\n"
+
+  &alterPointer Rect r
+    println "In method alterPointer. r @r\n"
+    r = Rect 5 10 30 35
+    println "In method alterPointer. r @r\n"
