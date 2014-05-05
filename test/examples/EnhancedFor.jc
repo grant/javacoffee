@@ -1,5 +1,5 @@
 class EnhancedFor
-  main String[] args
+  main
     list = 1..10
     sum = sumListEnhanced list
     println "Sum of elements in list: @sum"

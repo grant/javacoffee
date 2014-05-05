@@ -1,5 +1,5 @@
 class Factorial
-  main String[] args
+  main
     NUM_FACTS = 100
     for i = 0..NUM_FACTS
       println "@i ! is @factorial(i)"
