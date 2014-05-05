@@ -85,17 +85,23 @@ class Point {
 
 ## How to develop
 
-Install and keep `gulp` running
+### Install and keep `gulp` running
 
 ```bash
 npm install
 gulp
 ```
 
-Test with the following:
+### Test with the following:
 
 ```bash
 node ./bin/javacoffee myFile.jc
+```
+
+### Run tests
+
+```bash
+npm test
 ```
 
 Filetype: _.jc_

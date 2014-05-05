@@ -1,17 +1,31 @@
-fs = require("fs")
+path = require 'path'
+fs = require 'fs'
+compiler = require './compiler'
 
-# Right now it just makes the file passed-in uppercased
+# Gets the path of a compiled file
+getCompiledPath = (filePath) ->
+  pathExtension = path.extname filePath
+  return filePath.substring(0, filePath.length - pathExtension.length) + '.class'
+
+# Compiles a file given the arguments
 compile = ->
   if process.argv.length > 2
-    myfile = process.argv[2]
-    if fs.existsSync(myfile)
-      content = fs.readFileSync(myfile, "utf8")
-      fs.writeFileSync myfile, content.toUpperCase()
-      console.log "Done"
+    filePath = process.argv[2]
+    if fs.existsSync filePath
+      # Get contents
+      content = fs.readFileSync(filePath, 'utf8')
+
+      # Compile
+      compiler.compile(content, (compiledContent) ->
+        # When compiled, save to file
+        compiledPath = getCompiledPath filePath
+        fs.writeFileSync compiledPath, compiledContent
+        console.log 'Done. (' + filePath + ') -> (' + compiledPath + ')'
+      )
     else
-      console.log "File does not exist - " + myfile
+      console.log 'File does not exist - ' + filePath
   else
-    console.log "Pass on a file name/path"
+    console.log 'Pass on a file name/path'
   return
 
 exports.compile = compile
