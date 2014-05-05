@@ -1,24 +1,64 @@
+char = require './char'
+
 keywords = [
+  'abstract'
+  'boolean'
+  'break'
+  'byte'
   'class'
-  'main'
-  'if'
+  'do'
+  'double'
   'else'
+  'extends'
+  'float'
+  'for'
+  'if'
+  'implements'
+  'instanceof'
+  'int'
+  'interface'
+  'long'
+  'main'
   'print'
   'println'
+  'return'
+  'short'
+  'switch'
+  'throw'
+  'throws'
+  'try'
+  'while'
 ]
 
 # Gets the keyword it starts with (if it does)
-startsWithKeyword = (line) ->
-  for keyword in keywords
-    line += ' '
-    return keyword if line.substring(0, keyword.length + 1) == keyword + ' '
+startsWithKeyword = (string, keyword) ->
+  # 1 argument
+  if keyword
+    trimmedString = string.trim()
+    if trimmedString.length == keyword.length
+      if trimmedString == keyword
+        return keyword
+      else
+        return false
+    # If the character after the string is a letter, return false
+    if char.isLetter(trimmedString.charAt(keyword.length + 1))
+      return false
+    else
+      return true
+  # 2 arguments
+  else
+    # Return the keyword if found
+    for keyword in keywords
+      startingKeyword = startsWithKeyword string, keyword
+      return startingKeyword if startingKeyword
+    return false
 
 # Gets beginning whitespace
-getBeginningWhitespace = (line) ->
+getBeginningWhitespace = (string) ->
   whitespace = ''
   i = 0
-  while line != '' and line.charAt(i).trim() == ''
-    whitespace += line.charAt(i)
+  while string != '' and string.charAt(i).trim() == ''
+    whitespace += string.charAt(i)
     ++i
   return whitespace
 
@@ -43,3 +83,4 @@ module.exports =
 
     tokens.push line
     return tokens
+  keywords: keywords
