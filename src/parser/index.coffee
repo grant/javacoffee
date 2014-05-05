@@ -1,12 +1,17 @@
 # Requires
 comment = require './comment'
+tokenizer = require './tokenizer'
 
-inComment = false
+inSingleLineComment = false
+inMultiLineComment = false
+inClass = false
+inMethod = false
+methodStack = []
 
 parseLines = (lines) ->
   for line in lines
-    if !inComment
-      hi = 1
+    tokens = tokenizer.getTokens line
+    # for token in tokens
 
 module.exports =
   parseLines: parseLines

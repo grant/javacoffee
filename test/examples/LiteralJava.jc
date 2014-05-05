@@ -1,5 +1,5 @@
 class LiteralJava
-  main String[] args
+  main
     ```
     System.out.println(Math.abs('hi');
     ```

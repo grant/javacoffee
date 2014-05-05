@@ -5,7 +5,7 @@
  */
 
 class CallingMethodsInSameClass
-  main String[] args
+  main
     printOne
     printOne
     printTwo

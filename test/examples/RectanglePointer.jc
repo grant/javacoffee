@@ -1,6 +1,6 @@
 Rect = Rectangle
 class RectanglePointer
-  main String[] args
+  main
     go
 
   &go

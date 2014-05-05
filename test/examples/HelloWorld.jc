@@ -3,5 +3,5 @@
  */
 
 class HelloWorld
-  main String[] args
+  main
     println "Hello World!"

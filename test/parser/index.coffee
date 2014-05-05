@@ -1,1 +1,2 @@
-require './comment'
+describe 'parser', ->
+  require './comment'

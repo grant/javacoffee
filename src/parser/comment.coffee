@@ -1,6 +1,6 @@
 module.exports =
-  isSingleLineComment: (line) ->
+  isSingleLineComment: (token) ->
     return line.trim().substring(0, 2) == '//'
 
-  startsMultiLineComment: (line) ->
+  startsMultiLineComment: (token) ->
     return true
