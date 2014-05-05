@@ -39,3 +39,19 @@ describe 'tokenizer', ->
         tokenizer.getTokens('  &  sumListEnhanced     :    int').should.equal(['  ', '&', '  ', 'sumListEnhanced', '     ', ':', '    ', 'int'])
       it 'should work with params and return type', ->
         tokenizer.getTokens('  &sumListEnhanced int[] list :int').should.equal(['   ', '&', 'sumListEnhanced', ' ', 'int[]', ' ', 'list', ' ', ':', 'int'])
+    describe 'assignment', ->
+      it 'should work with a basic example', ->
+        tokenizer.getTokens('    x = 3').should.equal(['    ', 'x', ' ', '=', ' ', '3'])
+      it 'should work with a basic example no spaces', ->
+        tokenizer.getTokens('    x=3').should.equal(['    ', 'x', '=', '3'])
+      it 'should work with comments on end', ->
+        tokenizer.getTokens('    x = 3#3').should.equal(['    ', 'x', ' ', '=', ' ', '3', '#3'])
+      it 'should work with comments on in middle', ->
+        tokenizer.getTokens('    /**/x/**/=/**/3').should.equal(['    ', '/**/', 'x', '/**/', '=', '/**/', '3'])
+    describe 'string', ->
+      it 'should detect strings', ->
+        tokenizer.getTokens('    println "hi"').should.equal(['    ', 'println', ' ', '"hi"'])
+      it 'should detect strings with single quotes', ->
+        tokenizer.getTokens("    println 'hi'").should.equal(['    ', 'println', ' ', "'hi'"])
+      it 'should detect strings with special character quote marks', ->
+        tokenizer.getTokens('    println "h\"i"').should.equal(['    ', 'println', ' ', '"h\"i"'])
