@@ -1,5 +1,5 @@
 {
-  "name": "JavaCoffee",
+  "name": "javacoffee",
   "version": "0.0.1",
   "description": "Coffeescript-like syntax for writing Java code ",
   "main": "./lib/javacoffee",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/grant/JavaCoffee"
+    "url": "https://github.com/grant/javacoffee"
   },
   "keywords": [
     "coffeescript",
@@ -22,9 +22,9 @@
   "author": "Grant Timmerman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/grant/JavaCoffee/issues"
+    "url": "https://github.com/grant/javacoffee/issues"
   },
-  "homepage": "https://github.com/grant/JavaCoffee",
+  "homepage": "https://github.com/grant/javacoffee",
   "engines": {
     "node": "*"
   },
