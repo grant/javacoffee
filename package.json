@@ -2,11 +2,10 @@
   "name": "JavaCoffee",
   "version": "0.0.0",
   "description": "Coffeescript-like syntax for writing Java code ",
-  "main": "index.js",
+  "main": "./lib/javacoffee",
   "scripts": {
     "test": "mocha"
   },
-  "main": "./lib/javacoffee",
   "repository": {
     "type": "git",
     "url": "https://github.com/grant/JavaCoffee"
@@ -28,5 +27,14 @@
   "homepage": "https://github.com/grant/JavaCoffee",
   "engines": {
     "node": "*"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-watch": "^0.6.4",
+    "gulp-coffeelint": "^0.3.2",
+    "gulp-util": "^2.2.14",
+    "coffee-script": "^1.7.1",
+    "gulp-plumber": "^0.6.1",
+    "gulp-coffee": "^1.4.2"
   }
 }
