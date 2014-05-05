@@ -3,17 +3,16 @@ exec = require('child_process').exec
 
 # Compiler
 compiler =
+  # .jc -> .java
   compileJavaCoffee: (filePath, content, cb) ->
-    # .jc -> .java
+    cb(content)
 
+  # .java -> .class
   compileJava: (filePath, content, cb) ->
-    # .java -> .class
     command = 'javac ' + filePath
     exec(command, (error, stdout, stderr) ->
-      console.log "stdout: " + stdout
-      console.log "stderr: " + stderr
-      console.log "exec error: " + error  if error isnt null
-      cb(stdout)
+      # Nothing to do here... javac will log errors automatically
+      cb()
     )
 
 module.exports = compiler

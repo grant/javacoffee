@@ -21,7 +21,7 @@ gulp.task 'coffee', ->
   # Compile
   gulp.src src.coffee
     .pipe plumber()
-    .pipe coffee().on 'error', gutil.log 
+    .pipe coffee().on 'error', gutil.log
     .pipe gulp.dest dest.coffee
 
 gulp.task 'watch', ->
