@@ -2,16 +2,20 @@
 comment = require './comment'
 tokenizer = require './tokenizer'
 
-inSingleLineComment = false
-inMultiLineComment = false
-inClass = false
-inMethod = false
+programState =
+  inSingleLineComment: false
+  inMultiLineComment: false
+  inClass: false
+  inMethod: false
+
 methodStack = []
 
+# converts the lines from .jc to .java
 parseLines = (lines) ->
   for line in lines
-    tokens = tokenizer.getTokens line
+    tokens = tokenizer.getTokens line, programState
     # for token in tokens
+  return lines
 
 module.exports =
   parseLines: parseLines

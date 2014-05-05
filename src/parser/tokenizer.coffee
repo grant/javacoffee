@@ -62,7 +62,9 @@ getBeginningWhitespace = (string) ->
     ++i
   return whitespace
 
+# Exports
 module.exports =
+  KEYWORDS: KEYWORDS
   getTokens: (line) ->
     tokens = []
     # Beginning whitespace
@@ -82,5 +84,4 @@ module.exports =
     line = line.substring beginningWhitespace.length
 
     tokens.push line
-    return tokens
-  KEYWORDS: KEYWORDS
+    return []
