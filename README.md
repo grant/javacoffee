@@ -1,4 +1,4 @@
-JavaCoffee
+javacoffee
 ==========
 
 Coffeescript-like syntax for writing Java code.
