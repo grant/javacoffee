@@ -3,9 +3,9 @@ fs = require 'fs'
 compiler = require './compiler'
 
 # Gets the path of a compiled file
-getCompiledPath = (filePath) ->
+getCompiledPath = (filePath, extname) ->
   pathExtension = path.extname filePath
-  return filePath.substring(0, filePath.length - pathExtension.length) + '.class'
+  return filePath.substring(0, filePath.length - pathExtension.length) + '.' + extname
 
 # Compiles a file given the arguments
 compile = ->
@@ -15,12 +15,17 @@ compile = ->
       # Get contents
       content = fs.readFileSync(filePath, 'utf8')
 
-      # Compile
-      compiler.compile(content, (compiledContent) ->
-        # When compiled, save to file
-        compiledPath = getCompiledPath filePath
-        fs.writeFileSync compiledPath, compiledContent
+      # Compile .jc -> .java
+      compiler.compileJavaCoffee(filePath, content, (javaContent) ->
+        # Save .java
+        compiledPath = getCompiledPath filePath, 'java'
+        fs.writeFileSync compiledPath, javaContent
         console.log 'Done. (' + filePath + ') -> (' + compiledPath + ')'
+        
+        # # Compile .java -> .class
+        # compiledPath = getCompiledPath filePath, 'class'
+        # fs.writeFileSync compiledPath, compiledContent
+        # console.log 'Done. (' + filePath + ') -> (' + compiledPath + ')'
       )
     else
       console.log 'File does not exist - ' + filePath

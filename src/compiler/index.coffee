@@ -3,8 +3,13 @@ exec = require('child_process').exec
 
 # Compiler
 compiler =
-  compile: (content, cb) ->
-    exec("ls", (error, stdout, stderr) ->
+  compileJavaCoffee: (filePath, content, cb) ->
+    # .jc -> .java
+
+  compileJava: (filePath, content, cb) ->
+    # .java -> .class
+    command = 'javac ' + filePath
+    exec(command, (error, stdout, stderr) ->
       console.log "stdout: " + stdout
       console.log "stderr: " + stderr
       console.log "exec error: " + error  if error isnt null
