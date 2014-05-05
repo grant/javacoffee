@@ -1,5 +1,5 @@
 tokenizer = require '../../src/parser/tokenizer'
-keywords = tokenizer.keywords
+KEYWORDS = tokenizer.KEYWORDS
 
 # describe 'tokenizer', ->
 #   describe 'startsWithKeyword', ->

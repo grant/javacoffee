@@ -1,6 +1,6 @@
 char = require './char'
 
-keywords = [
+KEYWORDS = [
   'abstract'
   'boolean'
   'break'
@@ -48,7 +48,7 @@ startsWithKeyword = (string, keyword) ->
   # 2 arguments
   else
     # Return the keyword if found
-    for keyword in keywords
+    for keyword in KEYWORDS
       startingKeyword = startsWithKeyword string, keyword
       return startingKeyword if startingKeyword
     return false
@@ -83,4 +83,4 @@ module.exports =
 
     tokens.push line
     return tokens
-  keywords: keywords
+  KEYWORDS: KEYWORDS
