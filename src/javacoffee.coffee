@@ -5,7 +5,8 @@ compiler = require './compiler'
 # Gets the path of a compiled file
 getCompiledPath = (filePath, extname) ->
   pathExtension = path.extname filePath
-  return filePath.substring(0, filePath.length - pathExtension.length) + '.' + extname
+  endIndex = filePath.length - pathExtension.length
+  return filePath.substring(0, endIndex) + '.' + extname
 
 # Compiles a file given the arguments
 compile = ->

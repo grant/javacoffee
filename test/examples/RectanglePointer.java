@@ -8,7 +8,7 @@ public class RectanglePointer {
   public static void go() {
     Rectangle r1 = new Rectangle(0, 0, 5, 5);
     System.out.println("In method go. r1 " + r1 + "\n");
-    // could have been 
+    // could have been
     //System.out.prinltn("r1" + r1.toString());
     r1.setSize(10, 15);
     System.out.println("In method go. r1 " + r1 + "\n");

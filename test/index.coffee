@@ -1,3 +1,4 @@
 mocha = require 'mocha'
+should = require 'should'
 
-console.log 'test'
+require './examples'

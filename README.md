@@ -5,9 +5,9 @@ Coffeescript-like syntax for writing Java code.
 
 ```bash
 npm install javacoffee -g
+# Will generate Fibonacci.java and Fibonacci.class
+javacoffee Fibonacci.jc
 ```
-
-**Please don't install yet. This is still in development!!!**
 
 ## Examples
 
