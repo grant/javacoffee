@@ -1,13 +1,20 @@
 javacoffee
 ==========
 
-Coffeescript-like syntax for writing Java code.
+Coffeescript-like syntax for writing Java code. :coffee:
 
 ```bash
 npm install javacoffee -g
 # Will generate Fibonacci.java and Fibonacci.class
 javacoffee Fibonacci.jc
 ```
+
+## TODO list
+
+- Work on tokenizer
+- Translate comments
+- Translate class
+- Translate methods
 
 ## Examples
 
