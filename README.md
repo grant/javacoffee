@@ -9,7 +9,7 @@ Coffeescript-like syntax for writing Java code.
 
 ```jc
 class Fibonacci
-  // Print out the Fibonacci sequence for values < 50
+  # Print out the Fibonacci sequence for values < 50
   main
     lo = hi = 1
     println lo
