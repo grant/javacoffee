@@ -3,6 +3,8 @@ javacoffee
 
 Coffeescript-like syntax for writing Java code. :coffee:
 
+**Does not work yet!!!**
+
 ```bash
 npm install javacoffee -g
 javacoffee Fibonacci.jc
