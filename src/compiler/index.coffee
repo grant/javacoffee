@@ -1,15 +1,13 @@
 # Requires
 exec = require('child_process').exec
-S = require 'string'
 parser = require '../parser'
 
 # Compiler
 compiler =
   # .jc -> .java
   compileJavaCoffee: (filePath, content, cb) ->
-    lines = S(content).lines()
-    parser.parseLines lines
-    cb lines.join '\n'
+    parser.parse content
+    cb content
 
   # .java -> .class
   compileJava: (filePath, content, cb) ->
