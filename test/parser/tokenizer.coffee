@@ -7,21 +7,21 @@ describe 'tokenizer', ->
   describe 'getTokens', ->
     describe 'class', ->
       it 'should work with starting whitespace', ->
-        tokenizer.getTokens('   class Tester').should.equal(['   ', 'class', ' ', 'Tester'])
+        tokenizer.getTokens('   Tester').should.equal(['   ', 'Tester'])
       it 'should work with trailing whitespace', ->
-        tokenizer.getTokens('   class Tester    ').should.equal(['   ', 'class', ' ', 'Tester', '    '])
+        tokenizer.getTokens('   Tester    ').should.equal(['   ', 'Tester', '    '])
       it 'should work with single line comments no space', ->
-        tokenizer.getTokens('class Tester# test blah').should.equal(['class',' ','Tester','# test blah'])
+        tokenizer.getTokens('Tester# test blah').should.equal(['Tester','# test blah'])
       it 'should work with single line comments with space', ->
-        tokenizer.getTokens('class Tester    # test blah').should.equal(['class',' ','Tester','    ','# test blah'])
+        tokenizer.getTokens('Tester    # test blah').should.equal(['Tester','    ','# test blah'])
       it 'should work with multi line comments with space no end', ->
-        tokenizer.getTokens('class Tester    /* test blah').should.equal(['class',' ','Tester','    ','/* test blah'])
+        tokenizer.getTokens('Tester    /* test blah').should.equal(['Tester','    ','/* test blah'])
       it 'should work with multi line comments with space with end', ->
-        tokenizer.getTokens('class Tester    /* test blah */  ').should.equal(['class',' ','Tester','    ','/* test blah */', '  '])
+        tokenizer.getTokens('Tester    /* test blah */  ').should.equal(['Tester','    ','/* test blah */', '  '])
       it 'should work with multi line comments with space with end with single line', ->
-        tokenizer.getTokens('class Tester    /* test blah */  # another comment').should.equal(['class',' ','Tester','    ','/* test blah */', '  ', '# another comment'])
+        tokenizer.getTokens('Tester    /* test blah */  # another comment').should.equal(['Tester','    ','/* test blah */', '  ', '# another comment'])
       it 'should work with single line comment having multi line comments', ->
-        tokenizer.getTokens('class Tester    #/* test blah */').should.equal(['class',' ','Tester','    ','#/* test blah */'])
+        tokenizer.getTokens('Tester    #/* test blah */').should.equal(['Tester','    ','#/* test blah */'])
       it 'should work with embedded comments', ->
         tokenizer.getTokens('class/**/Tester').should.equal(['class', '/**/', 'Tester'])
     describe 'method', ->

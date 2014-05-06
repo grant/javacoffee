@@ -12,8 +12,11 @@ methodStack = []
 
 # converts the content of .jc to .java
 parse = (content) ->
-  # tokens = tokenizer.getTokens line, programState
-  # for token in tokens
+  # Get all the tokens
+  tokens = tokenizer.getTokens content
+  # Go through the tokens line by line and translate
+
+  # Join the translated lines
   return content
 
 module.exports =
