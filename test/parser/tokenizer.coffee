@@ -55,3 +55,5 @@ describe 'tokenizer', ->
         tokenizer.getTokens("    println 'hi'").should.equal(['    ', 'println', ' ', "'hi'"])
       it 'should detect strings with special character quote marks', ->
         tokenizer.getTokens('    println "h\"i"').should.equal(['    ', 'println', ' ', '"h\"i"'])
+      it 'should work fine with string interpolation', ->
+        tokenizer.getTokens('    println "In method alterPointer. r @r\n"').should.equal(['    ', 'println', ' ', '"In method alterPointer. r @r\n"'])

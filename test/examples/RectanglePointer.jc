@@ -1,5 +1,5 @@
 Rect = Rectangle
-class RectanglePointer
+RectanglePointer
   main
     go
 

@@ -1,4 +1,4 @@
-class Factorial
+Factorial
   main
     NUM_FACTS = 100
     for i = 0..NUM_FACTS

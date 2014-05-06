@@ -1,4 +1,4 @@
-class EnhancedFor
+EnhancedFor
   main
     list = 1..10
     sum = sumListEnhanced list

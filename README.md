@@ -22,7 +22,7 @@ java Fibonacci
 ### Fibonacci
 
 ```jc
-class Fibonacci
+Fibonacci
   # Print out the Fibonacci sequence for values < 50
   main
     lo = hi = 1
@@ -54,7 +54,7 @@ class Fibonacci {
 ### Point
 
 ```jc
-class Point
+Point
   +double x, y
   +&origin = Point 0 0
   Point @x @y
@@ -110,6 +110,12 @@ node ./bin/javacoffee myFile.jc
 
 ```bash
 npm test
+```
+
+Specific tests
+
+```bash
+mocha -g 'examples' --compilers coffee:coffee-script/register
 ```
 
 Filetype: _.jc_

@@ -2,6 +2,6 @@
  * HelloWorld.java
  */
 
-class HelloWorld
+HelloWorld
   main
     println "Hello World!"

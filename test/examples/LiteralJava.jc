@@ -1,4 +1,4 @@
-class LiteralJava
+LiteralJava
   main
     ```
     System.out.println(Math.abs('hi');
