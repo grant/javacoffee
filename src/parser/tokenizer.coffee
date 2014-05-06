@@ -1,11 +1,11 @@
 char = require './char'
+S = require 'string'
 
 KEYWORDS = [
   'abstract'
   'boolean'
   'break'
   'byte'
-  'class'
   'do'
   'double'
   'else'
@@ -53,6 +53,36 @@ startsWithKeyword = (string, keyword) ->
       return startingKeyword if startingKeyword
     return false
 
+# Gets if a line opens a multiline comment
+opensMultilineComment = (line) ->
+  if line.indexOf('/*') == -1
+    return false
+  # Start cutting off beginning of line
+  inMultiLineComment = false
+  while line
+    if inMultiLineComment
+      endCommentIndex = line.indexOf('*/')
+      if endCommentIndex == -1
+        line = ''
+      else
+        line = line.substring(endCommentIndex + 2)
+        inMultiLineComment = false
+    else # Not in multiline comment
+      singleLineCommentIndex = line.indexOf('//')
+      if singleLineCommentIndex == -1
+        singleLineCommentIndex = line.indexOf('#')
+      multilineCommentIndex = line.indexOf('/*')
+      if (singleLineCommentIndex != -1) and (multilineCommentIndex != -1) and (singleLineCommentIndex < multilineCommentIndex)
+        line = ''
+      else
+        line = line.substring(line.indexOf('/'))
+        if line.substring(0, 2) == '/*'
+          inMultiLineComment = true
+          line = line.substring(2)
+        else
+          line = line.substring(1)
+  return inMultiLineComment
+
 # Gets beginning whitespace
 getBeginningWhitespace = (string) ->
   whitespace = ''
@@ -62,11 +92,24 @@ getBeginningWhitespace = (string) ->
     ++i
   return whitespace
 
-# Exports
-module.exports =
-  KEYWORDS: KEYWORDS
-  getTokens: (line) ->
-    tokens = []
+# Gets an array of line tokens
+getTokensByLine = (content) ->
+  inMultiLineComment = false
+  lines = S(content).lines()
+  lineTokens = []
+
+  # Go through each line
+  for line in lines
+    # Tokenize the line
+    lineTokens = getTokensInLine line, inMultiLineComment
+    # Get if the line opens a multiline comment
+    inMultiLineComment = opensMultilineComment line
+  return lineTokens
+
+# Gets tokens in a line
+getTokensInLine = (line, inMultiLineComment) ->
+  tokens = []
+  if inMultiLineComment
     # Beginning whitespace
     beginningWhitespace = getBeginningWhitespace line
     tokens.push beginningWhitespace if beginningWhitespace
@@ -84,4 +127,13 @@ module.exports =
     line = line.substring beginningWhitespace.length
 
     tokens.push line
-    return []
+  else # Not in multiline comment
+    # Stuff...
+  return []
+
+# Exports
+module.exports =
+  KEYWORDS: KEYWORDS
+  getTokensByLine: getTokensByLine
+  getTokensInLine: getTokensInLine
+  opensMultilineComment: opensMultilineComment

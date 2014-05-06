@@ -2,7 +2,7 @@ fs = require 'fs'
 async = require 'async'
 
 examples = [
-  'HelloWorld'
+  # 'HelloWorld'
   # 'EnhancedFor'
   # 'Factorial'
   # 'LiteralJava'
