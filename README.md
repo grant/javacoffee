@@ -95,11 +95,11 @@ class Point {
 
 ## How to develop
 
-### Install and keep `gulp` running
+### Install and keep `coffee-gulp` running
 
 ```bash
 npm install
-gulp
+coffee-gulp
 ```
 
 ### Test with the following:
