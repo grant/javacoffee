@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Coffeescript-like syntax for writing Java code ",
   "main": "./lib/javacoffee",
+  "preferGlobal": true,
   "scripts": {
     "test": "mocha test/ --require should --reporter spec --compilers coffee:coffee-script/register"
   },

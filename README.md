@@ -89,10 +89,6 @@ class Point {
 }
 ```
 
-## How to compile
-
-`javacoffee file.jc` -> `file.class`
-
 ## How to develop
 
 ### Install and keep `coffee-gulp` running
