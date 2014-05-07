@@ -18,12 +18,6 @@ gulp.task 'coffee', ->
     .pipe coffeelint()
     .pipe coffeelint.reporter()
 
-  # Compile
-  gulp.src src.coffee
-    .pipe plumber()
-    .pipe coffee().on 'error', gutil.log
-    .pipe gulp.dest dest.coffee
-
 gulp.task 'watch', ->
   gulp.watch src.coffee, ['coffee']
 
