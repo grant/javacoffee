@@ -14,6 +14,7 @@ java Fibonacci
 
 ## TODO list
 
+- Make very simple translations work.
 - Work on tokenizer
 - Translate comments
 - Translate class
