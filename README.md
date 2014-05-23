@@ -65,7 +65,7 @@ Point
   +distance(Point that):double
     xDiff = x - that.x
     yDiff = y - that.y
-    Math.sqrt xDiff^2 + yDiff^2
+    Math.sqrt xDiff * xDiff + yDiff * yDiff
 ```
 
 converts to
